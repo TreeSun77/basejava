@@ -61,12 +61,7 @@ public class ArrayStorage {
     }
 
     int size() {
-        int countResume = 0;
-        for (int i = 0; i < storage.length; i++) {
-            if (storage[i] != null) {
-                countResume++;
-            }
-        }
-        return countResume;
+        int size = getAll().length;
+        return size;
     }
 }
