@@ -1,16 +1,13 @@
 import java.util.Arrays;
 
-
 /**
  * Array based storage for Resumes
  */
 public class ArrayStorage {
 
-
     Resume[] storage = new Resume[10000];
 
     void clear() {
-
         Arrays.fill(storage, null);
     }
 
@@ -21,7 +18,6 @@ public class ArrayStorage {
                 break;
             }
         }
-
     }
 
     Resume get(String uuid) {
@@ -48,18 +44,20 @@ public class ArrayStorage {
             }
             i++;
         }
-
     }
 
     /**
      * @return array, contains only Resumes in storage (without null)
      */
     Resume[] getAll() {
-
         return Arrays.copyOf(storage, storage.length);
     }
 
     int size() {
-        return storage.length;
+        int countResume = 0;
+        while (storage[countResume] != null) {
+            countResume++;
+        }
+        return countResume;
     }
 }
