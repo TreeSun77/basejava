@@ -61,7 +61,7 @@ public class ArrayStorage {
     }
 
     int size() {
-        int size = getAll().length;
+
         return size;
     }
 }
