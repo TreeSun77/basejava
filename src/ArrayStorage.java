@@ -18,12 +18,10 @@ public class ArrayStorage {
     }
 
     Resume get(String uuid) {
-        int i = 0;
-        while (storage[i] != null) {
+        for (int i = 0; i < size; i++) {
             if (storage[i].uuid.equals(uuid)) {
                 return storage[i];
             }
-            i++;
         }
         return null;
     }
