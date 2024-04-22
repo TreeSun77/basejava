@@ -8,7 +8,11 @@ public class ArrayStorage {
     Resume[] storage = new Resume[10000];
 
     void clear() {
-        Arrays.fill(storage, null);
+        for (int i = 0; i < storage.length; i++) {
+            if (storage[i] != null) {
+                storage[i] = null;
+            }
+        }
     }
 
     void save(Resume r) {
