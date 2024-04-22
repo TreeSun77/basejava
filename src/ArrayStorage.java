@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class ArrayStorage {
 
     Resume[] storage = new Resume[10000];
-
+    int size = 0;
     void clear() {
         for (int i = 0; i < storage.length; i++) {
             if (storage[i] != null) {
