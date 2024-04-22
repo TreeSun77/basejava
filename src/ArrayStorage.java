@@ -28,7 +28,6 @@ public class ArrayStorage {
             }
             i++;
         }
-
         return null;
     }
 
@@ -55,8 +54,10 @@ public class ArrayStorage {
 
     int size() {
         int countResume = 0;
-        while (storage[countResume] != null) {
-            countResume++;
+        for (int i = 0; i < storage.length; i++) {
+            if (storage[i] != null) {
+                countResume++;
+            }
         }
         return countResume;
     }
