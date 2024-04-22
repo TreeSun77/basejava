@@ -7,17 +7,14 @@ public class ArrayStorage {
 
     Resume[] storage = new Resume[10000];
     int size = 0;
+
     void clear() {
         Arrays.fill(storage, 0, size(), null);
     }
 
     void save(Resume r) {
-        for (int i = 0; i < storage.length; i++) {
-            if (storage[i] == null) {
-                storage[i] = r;
-                break;
-            }
-        }
+        storage[size] = r;
+        size++;
     }
 
     Resume get(String uuid) {
@@ -50,14 +47,13 @@ public class ArrayStorage {
      */
     Resume[] getAll() {
         int resumeCount = 0;
-        for (int i =0; i < storage.length && storage[i] != null; i++){
+        for (int i = 0; i < storage.length && storage[i] != null; i++) {
             resumeCount++;
         }
         return Arrays.copyOfRange(storage, 0, resumeCount);
     }
 
     int size() {
-
         return size;
     }
 }
